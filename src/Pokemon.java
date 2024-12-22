@@ -1,4 +1,4 @@
-public class Pokemon {
+public abstract class Pokemon {
    private String name;
    private int level;
    private int hp;
@@ -33,7 +33,7 @@ public class Pokemon {
         return type;
     }
 
-    // Setters
+
     public void setName(String name) {
         this.name = name;
     }
@@ -62,10 +62,7 @@ public class Pokemon {
         System.out.println("your pokemon " + name + " is speaking");
     }
 
-    public void attack(){
-        System.out.println("your pokemon " + name + " is attacking");
-        xp +=10;
-        System.out.println(name + " gained 10 XP! Total XP: " + xp);
-    }
+    public abstract void attack();
+    public abstract void  defend();
 
 }

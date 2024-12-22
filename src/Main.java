@@ -8,8 +8,15 @@ public class Main {
         WaterPokemon squirtle = new WaterPokemon("Squirtle", 5, 30, 20, "Water", 8, 18);
         GrassPokemon bulbasaur = new GrassPokemon("Bulbasaur", 5, 35, 15, "Grass", 12, 10);
 
+        pikachu.eats();
+        charmander.eats();
+        squirtle.speaks();
+        bulbasaur.speaks();
 
+        squirtle.attack();
+        charmander.ignite();
 
+        charmander.defend();
 
 
     }
