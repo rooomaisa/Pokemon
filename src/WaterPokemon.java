@@ -29,11 +29,18 @@ public class WaterPokemon extends Pokemon {
 
 
     @Override
-    public void attack() {
-        super.attack();
-        System.out.println(getName() + " uses Hydro Pump! It’s super effective!");
-        setXp(getXp() + 20);
-        System.out.println(getName() + " gained an additional 20 XP! Total XP: " + getXp());
+    public void attack(Pokemon opponent) {
+        System.out.println(getName() + " attacks " + opponent.getName() + " with Hydro Pump!");
+        int damage = 15 + waterShield;
+        opponent.setHp(opponent.getHp() - damage);
+        System.out.println(opponent.getName() + " loses " + damage + " HP! Remaining HP: " + opponent.getHp());
+        gainXp(15);
+        System.out.println(getName() + " gained 15 XP!");
+    }
+
+    @Override
+    public void defend() {
+        System.out.println(getName() + " uses a water barrier to defend!");
     }
 
 

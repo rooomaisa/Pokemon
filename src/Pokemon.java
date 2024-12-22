@@ -54,6 +54,15 @@ public abstract class Pokemon {
         this.type = type;
     }
 
+    public void gainXp(int amount) {
+        this.xp += amount;
+    }
+
+
+
+
+
+
     public void eats(){
         System.out.println("your pokemon" + name + " is eating");
     }
@@ -62,7 +71,7 @@ public abstract class Pokemon {
         System.out.println("your pokemon " + name + " is speaking");
     }
 
-    public abstract void attack();
+    public abstract void attack(Pokemon opponent);
     public abstract void  defend();
 
 }

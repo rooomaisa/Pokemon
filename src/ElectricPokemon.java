@@ -30,12 +30,21 @@
 
 
         @Override
-        public void attack() {
-            super.attack();
-            System.out.println(getName() + " uses Thunder! It’s super effective!");
-            setXp(getXp() + 20);
-            System.out.println(getName() + " gained an additional 20 XP! Total XP: " + getXp());
+        public void attack(Pokemon opponent) {
+            System.out.println(getName() + " attacks " + opponent.getName() + " with Thunderbolt!");
+            int damage = 25 + electricCharge;
+            opponent.setHp(opponent.getHp() - damage);
+            System.out.println(opponent.getName() + " loses " + damage + " HP! Remaining HP: " + opponent.getHp());
+            gainXp(25);
+            System.out.println(getName() + " gained 25 XP!");
         }
+
+        @Override
+        public void defend() {
+            System.out.println(getName() + " uses an electric barrier to defend!");
+            System.out.println(getName() + "'s barrier absorbs part of the damage!");
+        }
+
 
 
         public void charge() {

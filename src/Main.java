@@ -13,11 +13,15 @@ public class Main {
         squirtle.speaks();
         bulbasaur.speaks();
 
-        squirtle.attack();
+        pikachu.attack(bulbasaur);
         charmander.ignite();
 
         charmander.defend();
 
+        charmander.attack(squirtle);
+        squirtle.defend();
+
+        squirtle.attack(charmander);
 
     }
 }

@@ -30,11 +30,21 @@
 
 
         @Override
-        public void attack() {
-            super.attack(); // Call the super class attack method
-            System.out.println(getName() + " uses Leaf Storm! It’s super effective!");
-            setXp(getXp() + 20); // Add extra XP for type-specific behavior
-            System.out.println(getName() + " gained an additional 20 XP! Total XP: " + getXp());
+        public void attack(Pokemon opponent) {
+            System.out.println(getName() + " attacks " + opponent.getName() + " with Leaf Blade!");
+            int damage = 20 + leafSharpness;
+            opponent.setHp(opponent.getHp() - damage);
+            System.out.println(opponent.getName() + " loses " + damage + " HP! Remaining HP: " + opponent.getHp());
+            gainXp(20);
+            System.out.println(getName() + " gained 20 XP!");
+        }
+
+        @Override
+        public void defend() {
+            System.out.println(getName() + " uses a healing effect to restore HP!");
+            int heal = 15;
+            setHp(getHp() + heal);
+            System.out.println(getName() + " restored " + heal + " HP! Current HP: " + getHp());
         }
 
 

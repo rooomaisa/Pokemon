@@ -28,10 +28,13 @@ public class FirePokemon extends Pokemon {
 
 
     @Override
-    public void attack() {
-        System.out.println(getName() + " uses Fire Lash! It’s super effective!");
-        setXp(getXp() + 20);
-        System.out.println(getName() + " gained an additional 20 XP! Total XP: " + getXp());
+    public void attack(Pokemon opponent) {
+        System.out.println(getName() + " attacks " + opponent.getName() + " with Fire Lash!");
+        int damage = 20 + flameIntensity;
+        opponent.setHp(opponent.getHp() - damage);
+        System.out.println(opponent.getName() + " loses " + damage + " HP! Remaining HP: " + opponent.getHp());
+        gainXp(20);
+        System.out.println(getName() + " gained 20 XP!");
     }
 
     @Override
