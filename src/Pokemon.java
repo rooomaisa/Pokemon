@@ -67,4 +67,5 @@ public class Pokemon {
         xp +=10;
         System.out.println(name + " gained 10 XP! Total XP: " + xp);
     }
+
 }
